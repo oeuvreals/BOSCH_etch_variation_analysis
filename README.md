@@ -1,1 +1,1 @@
-# A-Multi-Model-Dataset-for-BOSCH-Plasma-Etching
+# BOSCH_etch_variation_analysis
