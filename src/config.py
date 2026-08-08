@@ -28,6 +28,7 @@ FIGURES_DIR = PROJECT_ROOT / "figures"                 # 그림 PNG, dpi=150
 
 # A 라인 산출물
 PROCESS_FEATURES_PARQUET = DATA_PROCESSED / "process_features.parquet"
+MODEL_TABLE_PARQUET = DATA_PROCESSED / "model_table.parquet"  # 조인 완료 모델 입력
 
 # B 라인 산출물 (커밋 예외로 읽기 가능)
 WAFERS_9PT_CSV = DATA_PROCESSED / "wafers_9pt.csv"
