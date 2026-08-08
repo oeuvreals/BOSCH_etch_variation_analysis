@@ -1,0 +1,11 @@
+lot_number,date,n_wafers_planned,measurements,cond_rep,cond_type,cond_label
+1,2024-07-02,10,89 & 9 points,3,Chuck,Chuck_3x
+2,2024-07-05,10,89 & 9 points,1,Chuck,Chuck_1x
+3,2024-07-09,10,89 & 9 points,9,Chuck,Chuck_9x
+4,2024-07-11,10,89 & 9 points,3,Si,Si_3x
+5,2024-07-19,10,89 & 9 points,1,Si,Si_1x
+6,2024-08-01,10,89 & 9 points,9,Si,Si_9x
+7,2024-08-05,6,89 & 9 points,3,SiO2,SiO2_3x
+8,2024-08-07,10,89 points,3,SiO2,SiO2_3x
+9,2024-08-21,10,89 & 9 points,3,Chuck,Chuck_3x
+10,2024-08-22,10,89 points,3,SiO2,SiO2_3x

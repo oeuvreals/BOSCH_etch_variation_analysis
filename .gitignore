@@ -1,11 +1,16 @@
 # ===== 데이터 (절대 커밋 금지) =====
-data/
+# 주의: "data/" 로 디렉토리를 통째로 제외하면 하위 파일을 ! 로 다시 포함시킬 수 없다.
+#       (git 이 제외된 디렉토리는 아예 탐색하지 않기 때문) 그래서 단계적으로 연다.
+data/*
+!data/processed/
+data/processed/*
+
 *.nc
 *.parquet
 *.xlsx
 
-# 마스터 테이블 등 작은 결과물만 예외 허용
-!data/processed/wafers_*.csv
+# 마스터 테이블 등 작은 중간 결과물(수십 KB)만 예외 허용
+!data/processed/*.csv
 
 # ===== Python =====
 __pycache__/
