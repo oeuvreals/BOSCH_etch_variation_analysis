@@ -157,7 +157,8 @@ layout (only the time extent differs).
 | `Day_2024_08_21` | 01–10 | 31 | 3193–3298 |
 | `Day_2024_08_22` | 01–10 | 31 | 3193–3299 |
 
-Sampling is ~0.213 s/sample (≈4.7 Hz), ~691 s (≈11.5 min) per wafer — the same
+Sampling is ~0.20 s/sample (**5 Hz**, confirmed 2026-08-08: median `diff(times)`
+= 0.2000 s on `Day_2024_07_05_Wafer_02`), ~691 s (≈11.5 min) per wafer — the same
 process window as the OES data, at a much lower rate.
 
 ---
@@ -171,9 +172,18 @@ process window as the OES data, at a much lower rate.
    two on raw `times` without correcting this.
 2. **`feature` count is not constant.** `Day_2024_07_02` has 44 channels, every
    other day has 31. Any code stacking process data across days must align
-   channels rather than assume a fixed width.
-3. **No feature names are stored.** The `feature` axis is unlabelled in the
-   netCDF; channel identities must come from `Readme.pdf` or `Lot_status.xlsx`.
+   channels rather than assume a fixed width. **The 31-channel set is a clean
+   subset of the 44** — the 07/02 day simply carries 13 extra sensors
+   (`Gas6Flow`, `Heater5..8Temp`, `ThermoCouple1..4Temp`,
+   `SourceRFLoadCapacitor`, `SourceRF2LoadCapacitor`, `attenuatorRatio`,
+   `moriOuterCurrent`) — so aligning to the common 31 names is trivial.
+3. **Feature names ARE stored** (corrected 2026-08-08 by opening the file with
+   `netCDF4`). Each group has a variable-length **string** variable
+   `feature` (shape `(n_feature,)`) holding channel names like
+   `Stat3_Etch_MV_Gas1Flow`, `Stat3_Etch_MV_SourceRFLoadPower`. The earlier
+   "unlabelled" note came from an `h5py` inspection that did not surface the
+   vlen-string variable; read `grp["feature"][:]` via `netCDF4` as the Readme
+   snippet shows.
 4. **Day file / process file coverage differs.** `Process_data.nc` covers 10
    days, but only 5 `Day_*.nc` OES files are present here.
 5. **`Day_2024_08_05` has 6 wafers**, not 10.
