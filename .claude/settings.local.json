@@ -16,7 +16,8 @@
       "Bash(grep -E '\\\\.nc$|\\\\.xlsx$|\\\\.parquet$|^data/')",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(PYTHONIOENCODING=utf-8 python src/analysis_variance.py)"
     ]
   }
 }
