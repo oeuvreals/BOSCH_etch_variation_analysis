@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import netCDF4, sys; print\\('netCDF4', netCDF4.__version__\\); print\\(sys.version\\)\")",
+      "Bash(python -c \"import xarray; print\\('xarray', xarray.__version__\\)\")",
+      "Bash(python -c \"import h5py; print\\('h5py', h5py.__version__\\)\")",
+      "Bash(python explore_nc.py Dictionary_process.nc)",
+      "Bash(python -c ' *)",
+      "Bash(timeout 300 python explore_nc.py Process_data.nc)",
+      "Bash(timeout 600 python -c ' *)",
+      "Bash(git clone *)",
+      "Bash(touch data/processed/wafers_9pt.csv)",
+      "Bash(git check-ignore *)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(awk '{print $2}')",
+      "Bash(grep -E '\\\\.nc$|\\\\.xlsx$|\\\\.parquet$|^data/')",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
+    ]
+  }
+}
