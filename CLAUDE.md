@@ -3,7 +3,8 @@ BOSCH DRIE 식각 공정 산포 구조 분해 + 챔버 drift 감지 (2주, 2인)
 
 # 데이터 위치
 - data/raw/ 에 원본, data/processed/ 에 산출물
-- 둘 다 gitignore 대상. 절대 커밋하지 말 것.
+- 원본·대용량 산출물(*.nc/*.parquet/*.xlsx)은 gitignore. 절대 커밋 금지.
+- 예외: data/processed/*.csv (마스터 테이블 등 수십 KB 인터페이스 테이블)만 커밋 허용.
 
 # 파일 구조
 - Si_Oxide_etch_9_points.csv : 웨이퍼당 9행 (측정점별)
